@@ -7,7 +7,7 @@
       "spotify",
       "bot"
     ],
-    "repository": "https://github.com/gsoosk/TelegramSpotifyDownloader",
+    "repository": "https://github.com/Vladyslavsavulyak/musicbot.git",
     "logo": "https://1000logos.net/wp-content/uploads/2021/04/Spotify-logo-500x281.png",
     "env": {
         "TELEGRAM_TOKEN": {
