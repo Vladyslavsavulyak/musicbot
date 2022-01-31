@@ -42,7 +42,7 @@ def get_single_song(bot, update):
     os.chdir(f'./.temp{message_id}{chat_id}')
 
     logging.log(logging.INFO, f'start downloading')
-    bot.send_message(chat_id=chat_id, text="Вікторія.Д шукає пісню")
+    bot.send_message(chat_id=chat_id, text="Вікторія.Дшукає пісню")
 
     if config["SPOTDL_DOWNLOADER"]:
         os.system(f'spotdl {url}')
@@ -54,7 +54,7 @@ def get_single_song(bot, update):
     logging.log(logging.INFO, 'sending to client')
     try:
         sent = 0 
-        bot.send_message(chat_id=chat_id, text="Вікторія.Д надсилає пісню")
+        bot.send_message(chat_id=chat_id, text="Владік надсилає пісню")
         files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(".") for f in filenames if os.path.splitext(f)[1] == '.mp3']
         for file in files:
             bot.send_audio(chat_id=chat_id, audio=open(f'./{file}', 'rb'), timeout=1000)
@@ -66,7 +66,7 @@ def get_single_song(bot, update):
     os.system(f'rm -rf .temp{message_id}{chat_id}')
 
     if sent == 0:
-       bot.send_message(chat_id=chat_id, text="It seems there was a problem in finding/sending the song.")
+       bot.send_message(chat_id=chat_id, text="Такої хуйні немає.Шукай нормальні пісні")
        raise Exception("dl Failed")
     else:
         logging.log(logging.INFO, 'sent')
